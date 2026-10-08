@@ -1,0 +1,20 @@
+[
+  {
+    "text": "The movie was wonderful. I loved it.",
+    "label": "POSITIVE",
+    "score": 0.9998863935470581,
+    "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+    "model_version": "hf:714eb0fa89d2f80546fda750413ed43d93601a13",
+    "token_count": 11,
+    "inference_ms": 28.7
+  },
+  {
+    "text": "A boring movie with terrible acting.",
+    "label": "NEGATIVE",
+    "score": 0.9997721314430237,
+    "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+    "model_version": "hf:714eb0fa89d2f80546fda750413ed43d93601a13",
+    "token_count": 9,
+    "inference_ms": 21.06
+  }
+]

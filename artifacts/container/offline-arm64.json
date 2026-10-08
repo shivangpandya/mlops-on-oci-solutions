@@ -1,0 +1,14 @@
+{
+  "network": "none",
+  "uid": 10001,
+  "cuda": null,
+  "torch": "2.14.1+cpu",
+  "prediction": {
+    "label": "POSITIVE",
+    "score": 0.9998767375946045,
+    "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+    "model_version": "hf:714eb0fa89d2f80546fda750413ed43d93601a13",
+    "token_count": 6,
+    "inference_ms": 22.28
+  }
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BikeOps · Hourly demand</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><a class="brand" href="/">BikeOps<span>ML in motion</span></a><span id="health" class="badge">Checking model…</span></header>
+    <section class="intro"><p class="eyebrow">PUBLIC DATA · REAL MODEL · LOCAL DEMO</p><h1>How busy will<br>the next hour be?</h1><p>Explore bike rental demand with weather and calendar inputs.<br>A first step from a trained model to an application.</p></section>
+    <div class="layout">
+      <section class="card"><div class="card-title"><h2>Set a scenario</h2><span>01 / INPUTS</span></div>
+        <form id="prediction-form">
+          <div class="pair"><label>Date<input name="date" type="date" value="2012-10-01" required></label><label>Hour of day<input name="hour" type="number" min="0" max="23" step="1" value="8" required><small>Local Washington, D.C. time · 0–23</small></label></div>
+          <label>Weather<select name="weather"><option value="clear">Clear or partly cloudy</option><option value="mist">Mist or cloudy</option><option value="light_precipitation">Light rain or snow</option><option value="severe_weather">Heavy rain or snow</option></select></label>
+          <div class="pair"><label>Temperature (°C)<input name="temperature_c" type="number" min="0" max="41" step="any" value="20" required></label><label>Humidity (%)<input name="humidity_pct" type="number" min="0" max="100" step="any" value="60" required></label></div>
+          <label>Wind speed (km/h)<input name="windspeed_kmh" type="number" min="0" max="67" step="any" value="10" required></label>
+          <label class="check"><input name="holiday" type="checkbox"> This date is a holiday</label>
+          <p class="hint">Weekday, season, and working-day status are calculated from your date. Holidays are set manually.</p>
+          <button id="predict-button" type="submit">Predict hourly demand <span aria-hidden="true">→</span></button>
+        </form>
+      </section>
+      <section class="card result-card" aria-live="polite" aria-atomic="true"><div class="card-title"><h2>Demand estimate</h2><span>02 / PREDICTION</span></div>
+        <div class="result"><p id="scenario">Choose your inputs, then predict</p><div id="prediction">—</div><p class="unit">rentals across the system / hour</p><p id="message" role="status">The saved Random Forest is ready to estimate demand.</p></div>
+        <div class="model-info"><span class="eyebrow">MODEL ARTIFACT</span><code id="model-version">Loading…</code><p>The version identifies the exact model file used for this prediction.</p></div>
+        <details><summary>See the model inputs</summary><p>The API converts your units and uses the saved training preprocessing.</p><pre id="model-inputs">Make a prediction to inspect the inputs.</pre></details>
+      </section>
+    </div>
+    <aside class="note"><strong>A learning demo, grounded in history.</strong> Trained on Capital Bikeshare data from 2011–2012. This estimates system-wide rentals using supplied weather, not station availability or a live forecast. Temperature is limited to the dataset’s 0–41 °C scale.</aside>
+    <footer><span>BikeOps · Learning MLOps on OCI OKE</span><nav><a href="/docs">API documentation</a><a href="https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset">UCI dataset & attribution</a></nav></footer>
+  </main>
+</body>
+</html>

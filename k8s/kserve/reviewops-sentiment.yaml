@@ -1,0 +1,87 @@
+# Internal custom predictor. Retains the existing /predict API; frontend delegation is a later change.
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: reviewops-sentiment
+  namespace: reviewops
+  labels:
+    networking.kserve.io/visibility: cluster-local
+  annotations:
+    reviewops/model-version: '2'
+    reviewops/mlflow-run: a42731d0210a442a8b6d687f17d998c9
+    reviewops/model-revision: 714eb0fa89d2f80546fda750413ed43d93601a13
+    serving.kserve.io/deploymentMode: Standard
+    serving.kserve.io/autoscaler-class: none
+spec:
+  predictor:
+    automountServiceAccountToken: false
+    nodeSelector:
+      kubernetes.io/arch: amd64
+    imagePullSecrets:
+    - name: ocir-pull
+    securityContext:
+      runAsNonRoot: true
+      runAsUser: 10001
+      runAsGroup: 10001
+      fsGroup: 10001
+      seccompProfile:
+        type: RuntimeDefault
+    containers:
+    - name: kserve-container
+      image: iad.ocir.io/idtfszw3ugfy/reviewops@sha256:74f50915cf1ca53692b4bb73470b2128a50d85d3c1f7438365757c9c92643854
+      imagePullPolicy: IfNotPresent
+      ports:
+      - name: http1
+        containerPort: 8080
+        protocol: TCP
+      securityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
+        capabilities:
+          drop:
+          - ALL
+      resources:
+        requests:
+          cpu: '1'
+          memory: 1Gi
+        limits:
+          cpu: '2'
+          memory: 2Gi
+      startupProbe:
+        httpGet:
+          path: /ready
+          port: 8080
+        periodSeconds: 5
+        timeoutSeconds: 3
+        failureThreshold: 60
+      readinessProbe:
+        httpGet:
+          path: /ready
+          port: 8080
+        periodSeconds: 5
+        timeoutSeconds: 3
+      livenessProbe:
+        httpGet:
+          path: /health
+          port: 8080
+        periodSeconds: 10
+        timeoutSeconds: 3
+      volumeMounts:
+      - name: temporary-files
+        mountPath: /tmp
+      command:
+      - python
+      - -m
+      - uvicorn
+      args:
+      - app:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - '8080'
+    volumes:
+    - name: temporary-files
+      emptyDir:
+        sizeLimit: 128Mi
+    minReplicas: 1
+    maxReplicas: 1

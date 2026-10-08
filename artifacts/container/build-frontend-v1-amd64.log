@@ -1,0 +1,30 @@
+STEP 1/12: FROM docker.io/library/python:3.12-slim@sha256:2b4f19dae3a777dfc3b76730bda1e82e1f66ab2a2686fa93ca78edbfb4f04ffe
+STEP 2/12: ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1     HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HUB_DISABLE_TELEMETRY=1     HF_HOME=/tmp/huggingface REVIEWOPS_MODEL_DIR=/app/checkpoint     OMP_NUM_THREADS=2 TOKENIZERS_PARALLELISM=false
+--> Using cache 36396f8898fe41bd5368dde0f20a30937868bfcede242d7e18208e28d0060099
+--> 36396f8898fe
+STEP 3/12: WORKDIR /app
+--> Using cache 3e1aed88bb9e9f547c27a51e7fd0664dd60356f1b5fc523eb0c3f0dd8004a065
+--> 3e1aed88bb9e
+STEP 4/12: COPY requirements-serving.txt ./
+--> Using cache b6524409aaaaf505d6e20ff7315053c093ef2841f2d83b8fad934d24dffc892d
+--> b6524409aaaa
+STEP 5/12: RUN python -m pip install --no-cache-dir torch==2.14.1+cpu --index-url https://download.pytorch.org/whl/cpu     && python -m pip install --no-cache-dir -r requirements-serving.txt     && python -m pip check     && python -c "import torch; assert torch.version.cuda is None"
+--> Using cache 427309ed087087e293d160e831f8b7938cb54cd3f8878c674e3e5a542a39b379
+--> 427309ed0870
+STEP 6/12: COPY app.py review_app.py review_inference.py review_remote.py release.json build-manifest.json ./
+--> 0ba7dcd555c3
+STEP 7/12: COPY static/ ./static/
+--> 09ef5ca554c3
+STEP 8/12: COPY checkpoint/ ./checkpoint/
+--> 01beb5d6498e
+STEP 9/12: LABEL org.opencontainers.image.title="ReviewOps"     io.reviewops.model.version="2"     io.reviewops.mlflow.run="a42731d0210a442a8b6d687f17d998c9"     io.reviewops.model.revision="714eb0fa89d2f80546fda750413ed43d93601a13"
+--> b0417f1f1fa6
+STEP 10/12: USER 10001:10001
+--> 672af842a5da
+STEP 11/12: EXPOSE 8000
+--> 09f56862942b
+STEP 12/12: CMD ["python", "-m", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+COMMIT localhost/reviewops:frontend-v1-amd64
+--> 00cae07e9363
+Successfully tagged localhost/reviewops:frontend-v1-amd64
+00cae07e93635d9b318b155a111a72faee2ff8afd2ca10fe15fe737023d089ad

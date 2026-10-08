@@ -1,0 +1,43 @@
+{
+  "release": {
+    "registered_name": "reviewops-distilbert",
+    "model_version": 2,
+    "model_uri": "models:/reviewops-distilbert/2",
+    "run_id": "a42731d0210a442a8b6d687f17d998c9",
+    "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+    "model_revision": "714eb0fa89d2f80546fda750413ed43d93601a13",
+    "sample_sha256": "3ebec9518168acdc87bfe5a5f9f46ace5775d6b874816f8894c04a57e70a816f",
+    "sha256": {
+      "checkpoint/model.safetensors": "7c3919835e442510166d267fe7cbe847e0c51cd26d9ba07b89a57b952b49b8aa",
+      "checkpoint/tokenizer_config.json": "5ab9097b4149371c5fd52b2d6e26cb6f9c07c0d19fcfdda895b1adad6b57c3e0",
+      "checkpoint/config.json": "582122c8f414793d131e10022ce9ba04e3811a9da6389137ee2f18665b4f4d15",
+      "checkpoint/README.md": "75f17282923fea5b541df92640e2d8646c4ff5e8e3e16ed0a7e4e50ee7588851",
+      "checkpoint/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+      "checkpoint/manifest.json": "31a3497999db699815bb982191fef3d28fbb0e1c557f7ec82e5961caa50e308d"
+    },
+    "verification_prediction": {
+      "label": "POSITIVE",
+      "score": 0.9998767375946045,
+      "model_version": "hf:714eb0fa89d2f80546fda750413ed43d93601a13"
+    }
+  },
+  "sha256": {
+    "requirements-serving.txt": "072236e29824932c6cc8a5078f59bf0b139ddbca97fe179f86fbb1974988a824",
+    "Dockerfile": "c7073ccb66186b6a0454f17c8e688017d619fa12b754beff9543cd9ed6eb2958",
+    "review_app.py": "f60659fe3ac15d54fc501c9c91a10be541fc1731e5fb6408f3cdc4dbec72566e",
+    "release.json": "976c9ab03e4b2f03e56e4eb7cd03d5d45c7f0a050d82f625df4a1dece9e25d46",
+    ".dockerignore": "1ace0658037983f17b57bd05db31fb77ca1d9c30391ad3ca0c7ddc6c9674a08d",
+    "app.py": "aa144a18e3dd7685a0ea430e4339625941afdc3d4ab5178d71e75051e54a4936",
+    "review_inference.py": "293db4edb1689a8a2e9228a5728baaad9b3c773d86ee952ba302d02ca9841218",
+    "checkpoint/model.safetensors": "7c3919835e442510166d267fe7cbe847e0c51cd26d9ba07b89a57b952b49b8aa",
+    "checkpoint/tokenizer_config.json": "5ab9097b4149371c5fd52b2d6e26cb6f9c07c0d19fcfdda895b1adad6b57c3e0",
+    "checkpoint/config.json": "582122c8f414793d131e10022ce9ba04e3811a9da6389137ee2f18665b4f4d15",
+    "checkpoint/README.md": "75f17282923fea5b541df92640e2d8646c4ff5e8e3e16ed0a7e4e50ee7588851",
+    "checkpoint/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+    "checkpoint/manifest.json": "31a3497999db699815bb982191fef3d28fbb0e1c557f7ec82e5961caa50e308d",
+    "static/index.html": "1d5e5291facc5685749b2c038a849899817b06679c0b80f5bc408f05c9a050b3",
+    "static/style.css": "f954f69d786b3cda5110fd0d3a3c8913c173f03e99a589dabebc0e8c53a26cbd",
+    "static/app.js": "011194ed921139ea0993620ace85eb43929c44057ff678c0fcc7838b95b3c7e4"
+  },
+  "status": "prepared-not-built"
+}

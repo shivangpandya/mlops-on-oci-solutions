@@ -1,0 +1,224 @@
+[
+     {
+          "Id": "de9e96ba0921164aa5fc10596452546842354112475652d17f65827bd9d00f58",
+          "Digest": "sha256:61f8fe4d275d17f69b46c3353cb50e4e67d3f378f9b82ed0f56cbb0d1bd9b0ae",
+          "RepoTags": [
+               "localhost/reviewops:mlflow-v2-arm64"
+          ],
+          "RepoDigests": [
+               "localhost/reviewops@sha256:61f8fe4d275d17f69b46c3353cb50e4e67d3f378f9b82ed0f56cbb0d1bd9b0ae"
+          ],
+          "Parent": "1995cbc7e35ad71bd17f24eed74a34484e5c6e291c7cfb747903a4a1a6d8314a",
+          "Comment": "debuerreotype 0.17",
+          "Created": "2026-10-06T13:36:14.655959678Z",
+          "Config": {
+               "User": "10001:10001",
+               "ExposedPorts": {
+                    "8000/tcp": {}
+               },
+               "Env": [
+                    "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "LANG=C.UTF-8",
+                    "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                    "PYTHON_VERSION=3.12.15",
+                    "PYTHON_SHA256=c2c4321961fab0fb999d66e0cecf521c2ab3994c7992873ea99e306c1094fd5a",
+                    "PYTHONDONTWRITEBYTECODE=1",
+                    "PYTHONUNBUFFERED=1",
+                    "HF_HUB_OFFLINE=1",
+                    "TRANSFORMERS_OFFLINE=1",
+                    "HF_HUB_DISABLE_TELEMETRY=1",
+                    "HF_HOME=/tmp/huggingface",
+                    "REVIEWOPS_MODEL_DIR=/app/checkpoint",
+                    "OMP_NUM_THREADS=2",
+                    "TOKENIZERS_PARALLELISM=false"
+               ],
+               "Cmd": [
+                    "python",
+                    "-m",
+                    "uvicorn",
+                    "app:app",
+                    "--host",
+                    "0.0.0.0",
+                    "--port",
+                    "8000"
+               ],
+               "WorkingDir": "/app",
+               "Labels": {
+                    "io.buildah.version": "1.36.0",
+                    "io.reviewops.mlflow.run": "a42731d0210a442a8b6d687f17d998c9",
+                    "io.reviewops.model.revision": "714eb0fa89d2f80546fda750413ed43d93601a13",
+                    "io.reviewops.model.version": "2",
+                    "org.opencontainers.image.title": "ReviewOps"
+               }
+          },
+          "Version": "",
+          "Author": "",
+          "Architecture": "arm64",
+          "Os": "linux",
+          "Size": 1432509408,
+          "VirtualSize": 1432509408,
+          "GraphDriver": {
+               "Name": "overlay",
+               "Data": {
+                    "LowerDir": "/var/home/core/.local/share/containers/storage/overlay/b6ffaf9aacc6f58c40c33b8505d8f449d8ed3710a665f117043c3697090ff3b9/diff:/var/home/core/.local/share/containers/storage/overlay/ae868f9fd7a30685f853a930efa3424c8ec4eb8f54d8945bcd1b517636f6edf7/diff:/var/home/core/.local/share/containers/storage/overlay/5f0f66dc6f1b6fdb1cbef57ff23edb7a78ef745b674788be08444ca5102973c8/diff:/var/home/core/.local/share/containers/storage/overlay/d8447936ccd0b8ec573d11a25d151e434e2caa36690d1d082f49506092ad32e3/diff:/var/home/core/.local/share/containers/storage/overlay/63c96a411947b49936f905ea597050d13490b54ef5973f15f7664697ae41408c/diff:/var/home/core/.local/share/containers/storage/overlay/08b1c63dfbae2844803b10673618a52becfe9c44c62066880d4db1cd66aa15e3/diff:/var/home/core/.local/share/containers/storage/overlay/850318594085eae54caab165cc3d2553f130f902645cb219d2afd7c87b43557a/diff:/var/home/core/.local/share/containers/storage/overlay/258ba1f62b513e7bb7492d3cc8ce445e4ef176a14980f193f789b6d7270ae61c/diff",
+                    "UpperDir": "/var/home/core/.local/share/containers/storage/overlay/eaff057670b8d8a80dc6c2e3e93dce64a7a73f15c9dbcfb84592a36104e82c0c/diff",
+                    "WorkDir": "/var/home/core/.local/share/containers/storage/overlay/eaff057670b8d8a80dc6c2e3e93dce64a7a73f15c9dbcfb84592a36104e82c0c/work"
+               }
+          },
+          "RootFS": {
+               "Type": "layers",
+               "Layers": [
+                    "sha256:258ba1f62b513e7bb7492d3cc8ce445e4ef176a14980f193f789b6d7270ae61c",
+                    "sha256:373ce1c1778b9a35fa1db898d648974a737e314bb3503ac5c988fa42ca1f63d5",
+                    "sha256:11d89b6e886fe5bea9177eb50df86009b68b75957e4605f2bb472bbb4a76751b",
+                    "sha256:84dd5a4db43e5a9bfe3a50e18c5b5ad0a8789ea9b894392200ad8a95388a745e",
+                    "sha256:96a58267109f07879d07b38e890b884643ceb9c9a5ec856969e8de7de9fb1f9d",
+                    "sha256:ad76409899029441f1e3d5a64d849a71628f07c27f852e40e8fd57d9f1ebf03b",
+                    "sha256:440f40e202790cc82cecf166202261bc88caf5cae801d1391f3f07ca3ba882ac",
+                    "sha256:d34586017f161903aec623f581a3b888e8dbbf633a84aeef7b38a1e6cbcef8af",
+                    "sha256:4c777ff0c7cbcc9e1fd5305fa6abe9b50f71049a11102a7a2bb327c45cd89784"
+               ]
+          },
+          "Labels": {
+               "io.buildah.version": "1.36.0",
+               "io.reviewops.mlflow.run": "a42731d0210a442a8b6d687f17d998c9",
+               "io.reviewops.model.revision": "714eb0fa89d2f80546fda750413ed43d93601a13",
+               "io.reviewops.model.version": "2",
+               "org.opencontainers.image.title": "ReviewOps"
+          },
+          "Annotations": {
+               "com.docker.official-images.bashbrew.arch": "arm64v8",
+               "org.opencontainers.image.base.digest": "sha256:16bf2b5c59a08523519d3c8589deca849285dee1d62a3653e124c3dba340f15e",
+               "org.opencontainers.image.base.name": "docker.io/library/python:3.12-slim",
+               "org.opencontainers.image.created": "2026-10-06T01:59:21Z",
+               "org.opencontainers.image.revision": "2a3b794c223ab067d122719541cdd54a068732a5",
+               "org.opencontainers.image.source": "https://github.com/docker-library/python.git#2a3b794c223ab067d122719541cdd54a068732a5:3.12/slim-trixie",
+               "org.opencontainers.image.url": "https://hub.docker.com/_/python",
+               "org.opencontainers.image.version": "3.12.15-slim-trixie"
+          },
+          "ManifestType": "application/vnd.oci.image.manifest.v1+json",
+          "User": "10001:10001",
+          "History": [
+               {
+                    "created": "2026-10-05T00:00:00Z",
+                    "created_by": "# debian.sh --arch 'arm64' out/ 'trixie' '@1791158400'",
+                    "comment": "debuerreotype 0.17"
+               },
+               {
+                    "created": "2026-10-06T01:59:29.292604683Z",
+                    "created_by": "ENV PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "comment": "buildkit.dockerfile.v0",
+                    "empty_layer": true
+               },
+               {
+                    "created": "2026-10-06T01:59:29.292604683Z",
+                    "created_by": "ENV LANG=C.UTF-8",
+                    "comment": "buildkit.dockerfile.v0",
+                    "empty_layer": true
+               },
+               {
+                    "created": "2026-10-06T01:59:29.292604683Z",
+                    "created_by": "RUN /bin/sh -c set -eux; \tapt-get update; \tapt-get install -y --no-install-recommends \t\tca-certificates \t\tnetbase \t\ttzdata \t; \tapt-get dist-clean # buildkit",
+                    "comment": "buildkit.dockerfile.v0"
+               },
+               {
+                    "created": "2026-10-06T01:59:29.292604683Z",
+                    "created_by": "ENV GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                    "comment": "buildkit.dockerfile.v0",
+                    "empty_layer": true
+               },
+               {
+                    "created": "2026-10-06T01:59:29.292604683Z",
+                    "created_by": "ENV PYTHON_VERSION=3.12.15",
+                    "comment": "buildkit.dockerfile.v0",
+                    "empty_layer": true
+               },
+               {
+                    "created": "2026-10-06T01:59:29.292604683Z",
+                    "created_by": "ENV PYTHON_SHA256=c2c4321961fab0fb999d66e0cecf521c2ab3994c7992873ea99e306c1094fd5a",
+                    "comment": "buildkit.dockerfile.v0",
+                    "empty_layer": true
+               },
+               {
+                    "created": "2026-10-06T02:11:04.2042695Z",
+                    "created_by": "RUN /bin/sh -c set -eux; \t\tsavedAptMark=\"$(apt-mark showmanual)\"; \tapt-get update; \tapt-get install -y --no-install-recommends \t\tdpkg-dev \t\tg++ \t\tgcc \t\tgnupg \t\tlibbluetooth-dev \t\tlibbz2-dev \t\tlibc6-dev \t\tlibdb-dev \t\tlibffi-dev \t\tlibgdbm-dev \t\tliblzma-dev \t\tlibncursesw5-dev \t\tlibreadline-dev \t\tlibsqlite3-dev \t\tlibssl-dev \t\tmake \t\ttk-dev \t\tuuid-dev \t\twget \t\txz-utils \t\tzlib1g-dev \t; \t\twget -O python.tar.xz \"https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz\"; \techo \"$PYTHON_SHA256 *python.tar.xz\" | sha256sum -c -; \twget -O python.tar.xz.asc \"https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc\"; \tGNUPGHOME=\"$(mktemp -d)\"; export GNUPGHOME; \tgpg --batch --keyserver hkps://keys.openpgp.org --recv-keys \"$GPG_KEY\"; \tgpg --batch --verify python.tar.xz.asc python.tar.xz; \tgpgconf --kill all; \trm -rf \"$GNUPGHOME\" python.tar.xz.asc; \tmkdir -p /usr/src/python; \ttar --extract --directory /usr/src/python --strip-components=1 --file python.tar.xz; \trm python.tar.xz; \t\tcd /usr/src/python; \tgnuArch=\"$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)\"; \t./configure \t\t--build=\"$gnuArch\" \t\t--enable-loadable-sqlite-extensions \t\t--enable-optimizations \t\t--enable-option-checking=fatal \t\t--enable-shared \t\t$(test \"${gnuArch%%-*}\" != 'riscv64' && echo '--with-lto') \t\t--with-ensurepip \t; \tnproc=\"$(nproc)\"; \tEXTRA_CFLAGS=\"$(dpkg-buildflags --get CFLAGS)\"; \tLDFLAGS=\"$(dpkg-buildflags --get LDFLAGS)\"; \tLDFLAGS=\"${LDFLAGS:-} -Wl,--strip-all\"; \tarch=\"$(dpkg --print-architecture)\"; arch=\"${arch##*-}\"; \tcase \"$arch\" in \t\tamd64|arm64) \t\t\tEXTRA_CFLAGS=\"${EXTRA_CFLAGS:-} -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer\"; \t\t\t;; \t\ti386) \t\t\t;; \t\t*) \t\t\tEXTRA_CFLAGS=\"${EXTRA_CFLAGS:-} -fno-omit-frame-pointer\"; \t\t\t;; \tesac; \tmake -j \"$nproc\" \t\t\"EXTRA_CFLAGS=${EXTRA_CFLAGS:-}\" \t\t\"LDFLAGS=${LDFLAGS:-}\" \t; \trm python; \tmake -j \"$nproc\" \t\t\"EXTRA_CFLAGS=${EXTRA_CFLAGS:-}\" \t\t\"LDFLAGS=${LDFLAGS:-} -Wl,-rpath='\\$\\$ORIGIN/../lib'\" \t\tpython \t; \tmake install; \t\tcd /; \trm -rf /usr/src/python; \t\tfind /usr/local -depth \t\t\\( \t\t\t\\( -type d -a \\( -name test -o -name tests -o -name idle_test \\) \\) \t\t\t-o \\( -type f -a \\( -name '*.pyc' -o -name '*.pyo' -o -name 'libpython*.a' \\) \\) \t\t\\) -exec rm -rf '{}' + \t; \t\tldconfig; \t\tapt-mark auto '.*' > /dev/null; \tapt-mark manual $savedAptMark; \tfind /usr/local -type f -executable -not \\( -name '*tkinter*' \\) -exec ldd '{}' ';' \t\t| awk '/=>/ { so = $(NF-1); if (index(so, \"/usr/local/\") == 1) { next }; gsub(\"^/(usr/)?\", \"\", so); printf \"*%s\\n\", so }' \t\t| sort -u \t\t| xargs -rt dpkg-query --search \t\t| awk 'sub(\":$\", \"\", $1) { print $1 }' \t\t| sort -u \t\t| xargs -r apt-mark manual \t; \tapt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \tapt-get dist-clean; \t\texport PYTHONDONTWRITEBYTECODE=1; \tpython3 --version; \tpip3 --version # buildkit",
+                    "comment": "buildkit.dockerfile.v0"
+               },
+               {
+                    "created": "2026-10-06T02:11:04.282599847Z",
+                    "created_by": "RUN /bin/sh -c set -eux; \tfor src in idle3 pip3 pydoc3 python3 python3-config; do \t\tdst=\"$(echo \"$src\" | tr -d 3)\"; \t\t[ -s \"/usr/local/bin/$src\" ]; \t\t[ ! -e \"/usr/local/bin/$dst\" ]; \t\tln -svT \"$src\" \"/usr/local/bin/$dst\"; \tdone # buildkit",
+                    "comment": "buildkit.dockerfile.v0"
+               },
+               {
+                    "created": "2026-10-06T02:11:04.282599847Z",
+                    "created_by": "CMD [\"python3\"]",
+                    "comment": "buildkit.dockerfile.v0",
+                    "empty_layer": true
+               },
+               {
+                    "created": "2026-10-06T13:35:29.237508562Z",
+                    "created_by": "/bin/sh -c #(nop) ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1     HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HUB_DISABLE_TELEMETRY=1     HF_HOME=/tmp/huggingface REVIEWOPS_MODEL_DIR=/app/checkpoint     OMP_NUM_THREADS=2 TOKENIZERS_PARALLELISM=false",
+                    "comment": "FROM docker.io/library/python:3.12-slim",
+                    "empty_layer": true
+               },
+               {
+                    "created": "2026-10-06T13:35:29.281659983Z",
+                    "created_by": "/bin/sh -c #(nop) WORKDIR /app",
+                    "comment": "FROM a5817b40e394",
+                    "empty_layer": true
+               },
+               {
+                    "created": "2026-10-06T13:35:29.398009786Z",
+                    "created_by": "/bin/sh -c #(nop) COPY file:c23e9b6d61920713652e46f4e372721e8a28a8d8ce62f9f25f4b8376879cf54b in ./ ",
+                    "comment": "FROM 691fe7f531cb"
+               },
+               {
+                    "created": "2026-10-06T13:36:06.71872567Z",
+                    "created_by": "/bin/sh -c python -m pip install --no-cache-dir torch==2.14.1+cpu --index-url https://download.pytorch.org/whl/cpu     && python -m pip install --no-cache-dir -r requirements-serving.txt     && python -m pip check     && python -c \"import torch; assert torch.version.cuda is None\"",
+                    "comment": "FROM 6696f2728b52"
+               },
+               {
+                    "created": "2026-10-06T13:36:12.579229088Z",
+                    "created_by": "/bin/sh -c #(nop) COPY multi:8f10cf297b724de74fce3f1173eb0870532abb78b4b60183fe1a933c823c4de3 in ./ ",
+                    "comment": "FROM a3a6e96d3e4d"
+               },
+               {
+                    "created": "2026-10-06T13:36:12.690317737Z",
+                    "created_by": "/bin/sh -c #(nop) COPY dir:47c8b6ac3d4197376c7d4c94675074b27e6a2ff4bb1038153a316eb3ec517e90 in ./static/ ",
+                    "comment": "FROM 148a5122afe2"
+               },
+               {
+                    "created": "2026-10-06T13:36:13.566059246Z",
+                    "created_by": "/bin/sh -c #(nop) COPY dir:c1ac60a07f2291d5cb3dccd0a230b2e082ade985c5be3fd037dcb5c8d7bd4589 in ./checkpoint/ ",
+                    "comment": "FROM 758fb4fb17a0"
+               },
+               {
+                    "created": "2026-10-06T13:36:14.576111345Z",
+                    "created_by": "/bin/sh -c #(nop) LABEL org.opencontainers.image.title=\"ReviewOps\"     io.reviewops.model.version=\"2\"     io.reviewops.mlflow.run=\"a42731d0210a442a8b6d687f17d998c9\"     io.reviewops.model.revision=\"714eb0fa89d2f80546fda750413ed43d93601a13\"",
+                    "comment": "FROM 7a0c8b41b611",
+                    "empty_layer": true
+               },
+               {
+                    "created": "2026-10-06T13:36:14.606156624Z",
+                    "created_by": "/bin/sh -c #(nop) USER 10001:10001",
+                    "comment": "FROM 7de82d5c7d1f",
+                    "empty_layer": true
+               },
+               {
+                    "created": "2026-10-06T13:36:14.632904267Z",
+                    "created_by": "/bin/sh -c #(nop) EXPOSE 8000",
+                    "comment": "FROM 452c1d3c4076",
+                    "empty_layer": true
+               },
+               {
+                    "created": "2026-10-06T13:36:14.656218367Z",
+                    "created_by": "/bin/sh -c #(nop) CMD [\"python\", \"-m\", \"uvicorn\", \"app:app\", \"--host\", \"0.0.0.0\", \"--port\", \"8000\"]",
+                    "comment": "FROM 1995cbc7e35a",
+                    "empty_layer": true
+               }
+          ],
+          "NamesHistory": [
+               "localhost/reviewops:mlflow-v2-arm64"
+          ]
+     }
+]

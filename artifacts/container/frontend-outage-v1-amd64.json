@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "checks": {
+    "/health": 200,
+    "/ready": 503,
+    "/predict": 503
+  }
+}

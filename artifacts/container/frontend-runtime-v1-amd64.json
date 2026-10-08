@@ -1,0 +1,6 @@
+{
+  "uid": 10001,
+  "local_checkpoint_exists": false,
+  "server_has_libtorch_loaded": false,
+  "backend_url": "http://predictor:8000"
+}

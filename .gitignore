@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+artifacts/*.joblib
+.hf-cache/
+artifacts/review_model/
+.superpowers/
+data/reviews/
+artifacts/mlflow/
+artifacts/review_evaluation/mlflow-artifacts/
+artifacts/review_evaluation_failed/mlflow-artifacts/
+artifacts/releases/
+
+dist/

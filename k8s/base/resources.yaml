@@ -1,0 +1,95 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: reviewops
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reviewops
+  namespace: reviewops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reviewops
+  template:
+    metadata:
+      labels:
+        app: reviewops
+      annotations:
+        reviewops/model-version: "2"
+        reviewops/mlflow-run: a42731d0210a442a8b6d687f17d998c9
+        reviewops/model-revision: 714eb0fa89d2f80546fda750413ed43d93601a13
+    spec:
+      automountServiceAccountToken: false
+      nodeSelector:
+        kubernetes.io/arch: amd64
+      imagePullSecrets:
+        - name: ocir-pull
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: reviewops
+          image: REPLACE_WITH_OCIR_DIGEST
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8000
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: [ALL]
+          resources:
+            requests:
+              cpu: "1"
+              memory: 1Gi
+            limits:
+              cpu: "2"
+              memory: 2Gi
+          startupProbe:
+            httpGet:
+              path: /ready
+              port: http
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 60
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: http
+            periodSeconds: 5
+            timeoutSeconds: 3
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 10
+            timeoutSeconds: 3
+          volumeMounts:
+            - name: temporary-files
+              mountPath: /tmp
+      volumes:
+        - name: temporary-files
+          emptyDir:
+            sizeLimit: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: reviewops
+  namespace: reviewops
+spec:
+  type: ClusterIP
+  selector:
+    app: reviewops
+  ports:
+    - name: http
+      port: 8000
+      targetPort: http
