@@ -1,4 +1,4 @@
-# Internal custom predictor. Retains the existing /predict API; frontend delegation is a later change.
+# Internal custom predictor using the /predict API; the frontend delegates over its cluster-local Service.
 apiVersion: serving.kserve.io/v1beta1
 kind: InferenceService
 metadata:

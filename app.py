@@ -1,2 +1,2 @@
-"""Default demo entrypoint. BikeOps remains available as bike_app:app."""
+"""ReviewOps FastAPI application entrypoint."""
 from review_app import app, create_app
